@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: servicio-reservas
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/db_viajeros?serverTimezone=UTC
+    password: secret
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: 'false'
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: 'true'
+server:
+  port: 10000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
